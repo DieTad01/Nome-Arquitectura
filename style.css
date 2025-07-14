@@ -1,0 +1,450 @@
+/*Pagina principal*/
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #cfcbcbce;
+    font-family: Verdana;
+
+    -webkit-transform: translateX(0); /* Prefijo para WebKit (Edge/Safari) */
+    transform: translateX(0);
+    transition: transform 0.7s ease-in-out;
+    -webkit-transition: -webkit-transform 0.7s ease-in-out;
+    overflow-x: hidden;
+}
+
+/* Efecto slide hacia la izquierda */
+body.slide-out-left {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+
+/* Efecto slide hacia la derecha (alternativa) */
+body.slide-out-right {
+    transform: translateX(100%);
+    -webkit-transform: translateX(-100%);
+}
+
+/*Efecto en logo*/
+.Logo {
+    transition: filter 0.3s ease; /* Para una transición suave */
+}
+
+.Logo:hover{
+    filter: drop-shadow(4px 2px 2px #fff)
+}
+
+/*Esta parte solo es para que quede estatico el menu y el titulo*/
+header{
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 10px;
+    z-index: 1000;
+}
+
+header h1{
+    font-size: 22px;
+    font-family: Verdana;
+}
+
+#navegador{
+    font-size: 18px;
+    font-family: Verdana;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Carrusel*/
+.carrusel {
+  width: 100%;
+  max-width: 700px; /* Añade un máximo para pantallas grandes */
+  height: auto; /* Cambia a auto para mantener proporción */
+  aspect-ratio: 16/9; /* Mantiene la relación de aspecto */
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  border: 3px solid #000000;
+  background-color: #000000;
+  /*Sombras*/
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra exterior */
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5)); /* Refuerza sombra en imágenes */
+}
+
+.slides {
+  display: flex;
+  width: 100%; /*Esto es importante para el tamaño de las imagenes*/
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  width: 100%;  
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: #d9d69b;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 6px;
+  background-color: #000;
+}
+
+/* Oculta los radio buttons */
+input[name="slide"] {
+  display: none;
+}
+
+/* Movimiento del carrusel */
+#slide1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+  transform: translateX(-200%);
+}
+
+/* Botones de navegación */
+.navigation {
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation label {
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+input[name="slide"]:checked + input + input + .slides + .navigation label:nth-child(1),
+input[name="slide"]:checked + input + .slides + .navigation label:nth-child(2),
+input[name="slide"]:checked + .slides + .navigation label:nth-child(3) {
+  background: #333;
+}
+
+#Menu_Intro h1{
+    font-size: 30px;
+    font-style: normal;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+#Menu_Intro h2{
+    font-size: 20px;
+    font-style: normal;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+
+
+/* Efecto hover */
+.mi-boton:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Si lo agregas al menú */
+#navegador .boton-especial {
+    background: #d9d69b;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+
+/*Aqui contiene la primera parte del cambio de color con el cursor*/
+#navegador a{
+    position: relative;
+    color: #000000;
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+/*Y este es el color al que cambia cuando esta el cursor*/
+#navegador a:hover{
+    color: #ffffff;
+}
+
+
+/*Aqui se concentra casi toda la informacion de la página, osea la lista*/
+#lista{
+    list-style-type: upper-roman;
+    font-weight: bold;
+}
+
+#lista p{
+    font-weight: normal;
+}
+
+#lista2{
+    list-style-type: upper-roman;
+    font-weight: bold;
+    align-items: center;
+}
+
+/*Aqui tiene una animacion para que regrese a su tamaño original*/
+#lista figure img{
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#lista figure img:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+/*Este ni me acuerdo para que sirve pero bueno*/
+#informacionprincipal{
+    padding: 10px;
+}
+
+#informacionsecundaria{
+    text-align: center;
+    padding: 5px;
+}
+
+/*Aqui abarca todo el contenido de creditos y redes sociales*/
+#pie{
+    background-color: #ffffff;
+    width: 100vw;
+    text-align: center;
+    border-top: 4px solid #000000;
+    margin: 0;
+    box-sizing: border-box;
+    clear: both;
+}
+
+#pie h4{
+    font: bold 18px verdana;
+}
+
+#redes-sociales a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000000;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* Espacio entre ícono y texto */
+}
+
+#redes-sociales a:hover {
+    color: #3512d3;
+    transform: scale(1.05);
+}
+
+#redes-sociales .fab, 
+#redes-sociales .fas {  /* Aplica a íconos de marcas (fab) y sólidos (fas) */
+    font-size: 2.5rem !important; /* Mismo tamaño que los demás */
+    vertical-align: middle; /* Alinea verticalmente con otros elementos */
+}
+
+/*Estilos para el formulario de la pagina principal*/
+#formulario{
+    width: 60%;
+}
+
+#formulario h1{
+    font-size: 14px;
+    font-style: normal;
+    align-items: center;
+    text-align: left;
+}
+
+#formulario h2{
+    font-size: 14px;
+    font-style: normal;
+    align-items: center;
+    text-align: center;
+}
+
+
+select{
+    background-color: transparent;
+    width: 100%;
+    border: 4px solid #000000;
+}
+
+.boton-subir{
+    background-color: transparent;
+    text-align: center;
+    align-items: center;
+    border: 4px solid #000000;
+    font-size: 14px;
+    font-style: normal;
+}
+
+#regreso{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Verdana;
+}
+
+#bibliografia{
+    width: 90%; /* Mantiene el 80% del ancho */
+    max-width: 1200px; /* Opcional: limita el ancho máximo */
+    margin: 0 auto; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto */
+    color: #2d3131;
+    padding: 20px; /* Añade espacio interno */
+}
+
+.mision-vision-valores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
+    gap: 30px; /* Espacio entre columnas */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 40px auto; /* Centrado y espacio vertical */
+    padding: 0 20px; /* Padding lateral para móviles */
+    text-align: center; /* Centra el texto */
+}
+
+.columna {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 25px; /* Espacio interno */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s ease;
+}
+
+.columna:hover {
+    transform: translateY(-5px); /* Efecto hover */
+}
+
+.columna h2 {
+    color: #000000; /* Color del título */
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.columna p {
+    color: #333; /* Color del texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Estilos para el eslogan */
+.slogan-container {
+    text-align: center;
+    margin: 5px auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.slogan-text {
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: #333;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    position: relative;
+    display: inline-block;
+}
+
+/* Responsive para móviles (menos de 768px) */
+@media (max-width: 768px) {
+    /* Ajustes generales */
+    body {
+        font-size: 14px;
+    }
+    
+    /* Header y logo */
+    header {
+        padding: 5px 0;
+    }
+    .Logo {
+        width: 120px;
+        height: auto;
+    }
+    
+    /* Carrusel */
+    .carrusel {
+        max-width: 95%;
+        border-width: 2px;
+        aspect-ratio: 16/9;
+    }
+    
+    /* Slogan */
+    .slogan-text {
+        font-size: 1.3rem;
+        padding: 0 15px;
+    }
+    
+    /* Bibliografía */
+    #bibliografia {
+        width: 95%;
+        padding: 15px 10px;
+    }
+    #bibliografia h1 {
+        font-size: 1.8rem;
+    }
+    #bibliografia h3 {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    /* Misión, Visión, Valores */
+    .mision-vision-valores {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    .columna {
+        padding: 20px;
+    }
+    
+    /* Footer */
+    #pie h2 {
+        font-size: 1.2rem;
+    }
+    #redes-sociales .fab, 
+    #redes-sociales .fas {
+        font-size: 2rem !important;
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .slogan-text {
+        font-size: 1.1rem;
+    }
+    #bibliografia h1 {
+        font-size: 1.5rem;
+    }
+    .columna h2 {
+        font-size: 1.3rem;
+    }
+}
+

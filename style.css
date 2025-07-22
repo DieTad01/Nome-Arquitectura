@@ -462,6 +462,7 @@ select{
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 100%;
+    overflow: hidden;
     transition: all .8s cubic-bezier(.25, .4, .45, 1.4);
 }
 
@@ -471,7 +472,8 @@ select{
 }
 
 .galeria > div:hover{
-    flex: 5;
+    flex: 4;
+    z-index: 10;
 }
 
 @media (max-width: 768px) {

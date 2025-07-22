@@ -465,6 +465,11 @@ select{
     transition: all .8s cubic-bezier(.25, .4, .45, 1.4);
 }
 
+.galeria .foto {
+  height: 100%;
+  background-size: cover;
+}
+
 .galeria > div:hover{
     flex: 5;
 }

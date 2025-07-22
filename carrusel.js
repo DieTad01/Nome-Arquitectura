@@ -1,7 +1,7 @@
 //Carrusel
 document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
-    const totalSlides = 3; // Cambia este número si añades más slides
+    const totalSlides = 2; // Cambia este número si añades más slides
     const slideInterval = 4000; // 4 segundos entre cambios
 
     function nextSlide() {

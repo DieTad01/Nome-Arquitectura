@@ -64,9 +64,9 @@ header h1{
 /*Carrusel*/
 .carrusel {
   width: 100%;
-  max-width: 700px; /* Añade un máximo para pantallas grandes */
-  height: auto; /* Cambia a auto para mantener proporción */
-  aspect-ratio: 16/9; /* Mantiene la relación de aspecto */
+  max-width: 800px; 
+  height: auto; 
+  aspect-ratio: 16/9; 
   margin: auto;
   overflow: hidden;
   position: relative;
@@ -311,19 +311,41 @@ select{
 }
 
 #bibliografia{
-    width: 90%; /* Mantiene el 80% del ancho */
-    max-width: 1200px; /* Opcional: limita el ancho máximo */
-    margin: 0 auto; /* Centra horizontalmente */
-    text-align: center; /* Centra el texto */
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    text-align: center; 
     color: #2d3131;
-    padding: 20px; /* Añade espacio interno */
+    padding: 20px; 
+}
+
+#proyectos{
+    width: 100%; 
+    max-width: 1500px; 
+    margin: 0 auto; 
+    text-align: center; 
+    color: #000000;
+    padding: 20px; 
+}
+
+#proyectos2{
+    width: 100%; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    text-align: justify; 
+    color: #000000;
+    padding: 20px; 
+}
+
+#proyectos2 h3{
+    font-size: 16px; 
 }
 
 .mision-vision-valores {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
-    gap: 30px; /* Espacio entre columnas */
-    max-width: 1200px; /* Ancho máximo del contenedor */
+    gap: 25px; /* Espacio entre columnas */
+    max-width: 1400px; /* Ancho máximo del contenedor */
     margin: 40px auto; /* Centrado y espacio vertical */
     padding: 0 20px; /* Padding lateral para móviles */
     text-align: center; /* Centra el texto */
@@ -333,7 +355,7 @@ select{
     background-color: #ffffff; /* Fondo blanco */
     border-radius: 10px; /* Bordes redondeados */
     padding: 25px; /* Espacio interno */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     transition: transform 0.3s ease;
 }
 
@@ -371,6 +393,40 @@ select{
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     position: relative;
     display: inline-block;
+}
+
+.galeria{
+    display: flex;
+    height: 20rem;
+    gap: 10px;
+    width: 80%;
+    justify-content: center;
+}
+
+.galeria > div{
+    flex: 1;
+    border-radius: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    overflow: hidden;
+    transition: all .8s cubic-bezier(.25, .4, .45, 1.4);
+}
+
+.galeria .foto {
+  height: 100%;
+  background-size: cover;
+}
+
+.galeria > div:hover{
+    flex: 4;
+    z-index: 10;
+}
+
+hr{
+    height: 5px;
+    background-color: #000;
+    width: 95%;
 }
 
 /* Responsive para móviles (menos de 768px) */
@@ -446,34 +502,6 @@ select{
     .columna h2 {
         font-size: 1.3rem;
     }
-}
-
-.galeria{
-    display: flex;
-    height: 20rem;
-    gap: 10px;
-    width: 80%;
-    justify-content: center;
-}
-
-.galeria > div{
-    flex: 1;
-    border-radius: 1rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    overflow: hidden;
-    transition: all .8s cubic-bezier(.25, .4, .45, 1.4);
-}
-
-.galeria .foto {
-  height: 100%;
-  background-size: cover;
-}
-
-.galeria > div:hover{
-    flex: 4;
-    z-index: 10;
 }
 
 @media (max-width: 768px) {
